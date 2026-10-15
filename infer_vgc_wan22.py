@@ -52,8 +52,8 @@ from diffsynth.utils.data import save_video
 
 # ─────────────────────────── defaults (Wan2.2-I2V-A14B) ─────────────────────
 
-CKPT_HIGH = "./checkpoints/wan22/no_flow_high_step4500.safetensors"
-CKPT_LOW  = "./checkpoints/wan22/no_flow_low_step3500.safetensors"
+CKPT_HIGH = "./checkpoints/wan22/release_no_flow_high_noise.pth"
+CKPT_LOW  = "./checkpoints/wan22/release_no_flow_low_noise.pth"
 WAN22_DIR = "./wan_models_cache/Wan2.2-I2V-A14B"
 QWEN_VL_DEFAULT = "./wan_models_cache/Qwen3-VL-32B-Instruct"
 
