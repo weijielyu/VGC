@@ -28,32 +28,32 @@ var RESULTS = {
     { id: "vgpairs/dl3dv_003153" }
   ],
   "static": [
-    { id: "9ee583d9-6935-5ef0-b84d-095a260fea81", featured: true, caption: "VGC stabilizes the highway guardrail, which warps in the generated video." },
-    { id: "0a37884b-3f5c-5740-9f4d-a4eae788e8bc", featured: true, caption: "VGC stabilizes the painting on the wall." },
-    { id: "2758c748-d121-541d-bbd7-b2b3908d6031", featured: true, caption: "VGC stops the sofa from drifting during the camera turn." },
-    { id: "4c2900f4-102c-5772-904c-b44aed20771f", featured: true, caption: "VGC keeps the mountain stationary while the camera dollies forward." },
-    { id: "5195773b-f356-5ea2-9dd3-20dbf7bafac0", caption: "VGC keeps the mountain stationary as the camera moves along the slope." },
-    { id: "e06510eb-793a-5f0b-b38f-9a49306ec852", caption: "VGC keeps the distant mountains static rather than drifting." },
-    { id: "1a43530e-7874-5a1f-a83c-e0d94cf47d4c", caption: "VGC removes the drift of the building at the far end of the street." },
-    { id: "ba541c8f-373d-5a11-9286-bbfa59c5b032", caption: "VGC preserves the rigid geometry of the elevated overpass." },
-    { id: "1fc6a374-339f-5755-90e8-653d87335ca2", caption: "VGC fixes the distorted church pew and the picture sliding on the wall." },
-    { id: "3f53ccd7-d85c-5c01-bb2e-b29705bf2451", caption: "VGC restores a coherent camera transition from the interior wall to the garden." },
-    { id: "82f9aa7b-7839-529f-84e2-6ea916e50870", featured: true, caption: "VGC keeps the tree from vanishing mid-shot, while preserving a coherent camera trajectory." },
-    { id: "2b73b8c2-fe22-52f6-a884-2c8b6f077f6f", featured: true, caption: "VGC removes the glass door that abruptly pops into view." }
+    { id: "9ee583d9-6935-5ef0-b84d-095a260fea81", featured: true },
+    { id: "0a37884b-3f5c-5740-9f4d-a4eae788e8bc", featured: true },
+    { id: "2758c748-d121-541d-bbd7-b2b3908d6031", featured: true },
+    { id: "4c2900f4-102c-5772-904c-b44aed20771f", featured: true },
+    { id: "5195773b-f356-5ea2-9dd3-20dbf7bafac0" },
+    { id: "e06510eb-793a-5f0b-b38f-9a49306ec852" },
+    { id: "1a43530e-7874-5a1f-a83c-e0d94cf47d4c" },
+    { id: "ba541c8f-373d-5a11-9286-bbfa59c5b032" },
+    { id: "1fc6a374-339f-5755-90e8-653d87335ca2" },
+    { id: "3f53ccd7-d85c-5c01-bb2e-b29705bf2451" },
+    { id: "82f9aa7b-7839-529f-84e2-6ea916e50870", featured: true },
+    { id: "2b73b8c2-fe22-52f6-a884-2c8b6f077f6f", featured: true }
   ],
   "dynamic": [
-    { id: "bc904d9b-3a39-596f-9c95-4c0d7d0ee523", featured: true, caption: "VGC corrects the car's direction of travel." },
-    { id: "42a094d9-9eac-59be-8f62-4ab86ce9e814", featured: true, caption: "VGC corrects the person's walking trajectory." },
-    { id: "06781124-993b-5fd3-b8e2-c7548e51e2d9", featured: true, caption: "VGC restores correct car motion and a stable road sign." },
-    { id: "0c5f25e6-a59a-5ed2-b7ce-7c603b44521f", featured: true, caption: "VGC distinguishes the parked silver car from the moving one and infers correct vehicle motion." },
-    { id: "43643e49-62d0-575d-b22d-b2f814967dcc", caption: "VGC restores a coherent trajectory for the car." },
-    { id: "54aac642-634e-5169-9966-65e96185dc34", caption: "VGC restores coherent motion across the busy traffic." },
-    { id: "075bf772-2a59-5f8b-874f-ffd5119cb78c", featured: true, caption: "VGC removes artifacts on people moving through the market." },
-    { id: "119d45cf-4895-56fc-ab0f-5bd131fa32da", caption: "VGC cleans up artifacts on the people and the background stall." },
-    { id: "adc38d9b-c044-5e06-9f2d-6d627e459ed5", caption: "VGC restores correct motion of the person on the elevator." },
-    { id: "dfcfd1ca-ef24-5a46-8f6c-c839b5ecba26", featured: true, caption: "VGC corrects the human motion seen through the window." },
-    { id: "fd0d4cd3-d91b-5491-a33c-ba7795a98a50", caption: "VGC restores coherent motion across the human crowd." },
-    { id: "e467dd6e-0c20-512b-97a2-8051478ce7bb", caption: "VGC removes the artifacts caused by the person's disappearance." }
+    { id: "bc904d9b-3a39-596f-9c95-4c0d7d0ee523", featured: true },
+    { id: "42a094d9-9eac-59be-8f62-4ab86ce9e814", featured: true },
+    { id: "06781124-993b-5fd3-b8e2-c7548e51e2d9", featured: true },
+    { id: "0c5f25e6-a59a-5ed2-b7ce-7c603b44521f", featured: true },
+    { id: "43643e49-62d0-575d-b22d-b2f814967dcc" },
+    { id: "54aac642-634e-5169-9966-65e96185dc34" },
+    { id: "075bf772-2a59-5f8b-874f-ffd5119cb78c", featured: true },
+    { id: "119d45cf-4895-56fc-ab0f-5bd131fa32da" },
+    { id: "adc38d9b-c044-5e06-9f2d-6d627e459ed5" },
+    { id: "dfcfd1ca-ef24-5a46-8f6c-c839b5ecba26", featured: true },
+    { id: "fd0d4cd3-d91b-5491-a33c-ba7795a98a50" },
+    { id: "e467dd6e-0c20-512b-97a2-8051478ce7bb" }
   ]
 };
 
