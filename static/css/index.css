@@ -318,10 +318,6 @@ body {
   margin-bottom: 0.25rem;
 }
 
-.compare-row .method-label.is-ours {
-  color: hsl(204, 86%, 53%);
-}
-
 .compare-row video {
   display: block;
   width: 100%;
