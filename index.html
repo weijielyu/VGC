@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Video Geometry Corrector (VGC) is a post-hoc video-to-video model, trained on synthetic paired supervision, that corrects geometry distortions in generated videos without modifying the source generator.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning to Correct Geometry in Generated Videos</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Cormorant+Garamond:400,500,600"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/results.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">
+            Learning to Correct Geometry in Generated Videos
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://weijielyu.github.io/">Weijie Lyu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=iRY1YVoAAAAJ&amp;hl=en">Tiancheng Shen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://lxtgh.github.io/">Xiangtai Li</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=YgL4rywAAAAJ&amp;hl=en">Yujing Wang</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/xiaoyuan-isaac-wang/">Xiaoyuan Wang</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://yuanhaobo.me/">Haobo Yuan</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://yizhou42.github.io/">Yizhou Zhao</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>UC Merced </span>
+            <span class="author-block"><sup>2</sup>NTU </span>
+            <span class="author-block"><sup>3</sup>PKU </span>
+            <span class="author-block"><sup>4</sup>CMU </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/pdf/VGC.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv Link. TODO: placeholder (FaceCam), replace with the VGC arXiv id. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2603.05506"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/weijielyu/VGC"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+          <!-- Submission Status. -->
+          <div class="title-row">
+            <span class="title is-4 publication-venue">🦘 NeurIPS 2026 🍑</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="./static/images/teaser.jpg"
+               alt="VGC teaser" width="100%" class="teaser-img">
+          <h2 class="subtitle has-text-centered">
+            <i>Video Geometry Corrector (VGC)</i> corrects geometry distortions in generated videos.
+            Under large camera motion, modern video generators often produce warped structures, inconsistent
+            parallax, and drifting scene layouts (red boxes). VGC refines these outputs into
+            <b style="color:hsl(204, 86%, 53%)">geometry-consistent videos</b>. When scaled to a larger backbone, it further extends to
+            general video refinement, including dynamic scenes with distorted human or object motion.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Generated videos often lose geometric consistency under camera motion: structures
+            warp under viewpoint change, parallax becomes inconsistent, and smooth camera
+            movement may collapse into shot-like transitions. We argue that this failure is
+            largely a data problem. In web-scale video corpora, most visible motion comes from
+            dynamic objects captured by static or weakly moving cameras, leaving only sparse
+            supervision for viewpoint-induced appearance changes. To address this, we propose
+            <i>Video Geometry Corrector (VGC)</i>, a <b style="color:hsl(204, 86%, 53%)">post-hoc video-to-video model</b> trained on
+            synthetic paired supervision. Starting from real videos with diverse camera motion
+            and pose annotations, we construct <b style="color:hsl(204, 86%, 53%)">VG-Pairs</b> with a synthetic paired-supervision
+            data generation pipeline. Each video clip is treated as a geometry-consistent target
+            and paired with a distorted counterpart synthesized by a pretrained image-to-video
+            inpainting model using <b style="color:hsl(204, 86%, 53%)">trajectory-adaptive keyframes</b>. VGC learns to map the
+            distorted input to the geometry-consistent target without modifying the source
+            generator, and uses <b style="color:hsl(204, 86%, 53%)">optical flow</b> as an auxiliary cue to help disentangle camera
+            motion from object motion. Experiments on pose-conditioned and prompt-driven
+            benchmarks show that VGC improves geometric consistency across multiple source
+            generators, and scaling to a larger backbone further extends the framework toward
+            more general video refinement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Method: Figure 3 of the paper and its caption. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <img src="./static/images/method.jpg" class="method-figure"
+             alt="Overview of Video Geometry Corrector (VGC): trajectory-adaptive keyframes of a real video condition an image-to-video inpainting model to produce a geometry-distorted training input; VGC, conditioned on optical flow of the distorted video, learns to reconstruct the real video."/>
+        <div class="content has-text-justified">
+          <p>
+            Starting from a real video with diverse camera motion, we select
+            <b style="color:hsl(204, 86%, 53%)">trajectory-adaptive keyframes</b> and use them to condition an image-to-video
+            inpainting model, which produces a geometry-distorted video that serves as the training
+            input. We then train VGC to map this distorted input to the geometry-consistent target
+            video with reconstruction loss. <b style="color:hsl(204, 86%, 53%)">Optical flow</b> is computed from the distorted
+            video and used as an additional conditioning signal for VGC, providing motion cues that
+            help disentangle camera motion from scene dynamics. The 3D reconstruction is shown here
+            only for visualization and is not used in the pipeline.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VG-Pairs. -->
+<section class="section results-section">
+  <div class="container is-fullhd">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Training Data: VG-Pairs</h2>
+        <p class="results-note">
+          Training pairs from VG-Pairs, built from DL3DV. Each real video clip is the
+          geometry-consistent target, paired with a distorted counterpart synthesized by
+          Wan 2.1-Fun-InP. These clips have short or nearly linear camera trajectories, which are
+          handled with a single segment between the first and last frames; clips with larger
+          accumulated motion are split at trajectory-adaptive keyframes.
+        </p>
+        <div data-results="vgpairs"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results. -->
+<section class="section results-section">
+  <div class="container is-fullhd">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <h4 class="title is-5 has-text-centered">
+          <a href="./more_results.html">(Click to see more results)</a>
+        </h4>
+        <h3 class="title is-4 has-text-centered" id="static">Static Scenes</h3>
+        <p class="results-note">As the camera moves, the generated video hallucinates changes in things that should remain still: distant mountains drift, paintings and sofas slide, buildings warp, and trees or doors pop in and out of existence. VGC keeps the static structure of the scene rigid and persistent, so the only motion in the frame is the camera's.</p>
+        <div data-results="static" data-featured></div>
+        <h3 class="title is-4 has-text-centered" id="dynamic">Dynamic Scenes</h3>
+        <p class="results-note">When the generator does animate something, it often gets the dynamics wrong: vehicles travel in implausible directions, pedestrians walk through furniture, limbs and crowds deform. VGC restores physically coherent trajectories and articulated motion for both vehicles and humans.</p>
+        <div data-results="dynamic" data-featured></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{lyu2026vgc,
+  title     = {Learning to Correct Geometry in Generated Videos},
+  author    = {Lyu, Weijie and Shen, Tiancheng and Li, Xiangtai and Wang, Yujing and
+               Wang, Xiaoyuan and Yuan, Haobo and Zhao, Yizhou and Yang, Ming-Hsuan},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page is adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
