@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vgc"
+version = "1.0.0"
+description = "Video Geometry Corrector — post-hoc geometry correction for generated videos (inference)"
+authors = [{name = "Weijie Lyu"}]
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+dependencies = [
+    "diffsynth>=2.0.14",   # stock DiffSynth-Studio backbone (Wan pipelines, VAE, schedulers)
+    "torch>=2.1.0",
+    "torchvision",
+    "numpy",
+    "Pillow",
+    "av",
+    "imageio[ffmpeg]",
+    "transformers",        # Qwen3-VL auto-captioning
+    "accelerate",          # device_map="auto" for Qwen3-VL
+    "huggingface_hub",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+# VGC inference is a set of top-level scripts that import `diffsynth`; there is no
+# package to build. `pip install -e .` just resolves the dependencies above.
+[tool.setuptools]
+py-modules = []

@@ -1,0 +1,31 @@
+# Models, checkpoints, outputs
+/wan_models_cache
+/checkpoints
+/outputs
+/outputs_wan22
+*.safetensors
+*.pth
+*.ckpt
+*.pt
+*.bin
+
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+.ipynb_checkpoints/
